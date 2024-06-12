@@ -26,7 +26,7 @@ let config = {
         }
     },
     width: 800,
-    height: 600,
+    height: 750,
     scene: [Load, TestLevel]
 }
 
