@@ -30,9 +30,13 @@ class Load extends Phaser.Scene {
             repeat: -1
         });
 
-         // ...and pass to the next Scene
-         console.log("anim generated...")
-         this.scene.start("testLevel");
+        // ...and pass to the next Scene
+        console.log("anim generated...");
+        this.music = this.sound.add("main_music");
+        this.music.setLoop(true);
+        this.music.volume = .4;
+        this.music.play();
+        this.scene.start("testLevel");
     }
 
     // Never get here since a new scene is started in create()
