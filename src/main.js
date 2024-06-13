@@ -25,9 +25,9 @@ let config = {
             }
         }
     },
-    width: 800,
-    height: 750,
-    scene: [Load, TestLevel]
+    width: 480,
+    height: 720,
+    scene: [Load, TestLevel, Level2]
 }
 
 var cursors;

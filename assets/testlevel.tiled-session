@@ -34,8 +34,8 @@
         }
     },
     "last.imagePath": "C:/Users/jackj/OneDrive/Documents/CMPM120/SquirmySlug/assets",
-    "map.height": 90,
-    "map.lastUsedFormat": "json",
+    "map.height": 500,
+    "map.lastUsedFormat": "tmx",
     "map.tileHeight": 16,
     "map.tileWidth": 16,
     "openFiles": [
@@ -45,6 +45,7 @@
     "recentFiles": [
         "gentle forest v01.tmx"
     ],
+    "resizeMap.removeObjects": true,
     "tileset.embedInMap": true,
     "tileset.tileSize": {
         "height": 16,

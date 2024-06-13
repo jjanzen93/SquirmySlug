@@ -10,11 +10,14 @@ class Load extends Phaser.Scene {
         
         this.load.atlas("slug", "Slug.png", "Slug_atlas.json");
         this.load.audio("main_music", "SlugSong.mp3");
+        this.load.audio("impact", "Retro Impact Punch 07.wav");
+        this.load.audio("foliage", "Retro Impact Lofi 09.wav");
         console.log("looking good...");
 
         // Load tilemap information
         this.load.image("bright_tiles", "gentle forest v01.png");                         // Packed tilemap
         this.load.tilemapTiledJSON("testlevel", "testlevel.tmj");   // Tilemap in JSON
+        this.load.tilemapTiledJSON("level2", "level2.tmj");
     }
 
     create() {
@@ -36,7 +39,9 @@ class Load extends Phaser.Scene {
         this.music.setLoop(true);
         this.music.volume = .4;
         this.music.play();
-        this.scene.start("testLevel");
+
+        this.scene.start("level2");
+
     }
 
     // Never get here since a new scene is started in create()
