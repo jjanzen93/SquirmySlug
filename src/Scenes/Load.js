@@ -37,10 +37,10 @@ class Load extends Phaser.Scene {
 
         // Load sfx
         this.load.audio("main_music", "SlugSong.mp3");
-        this.load.audio("impact", "Retro Impact Punch 07.wav");
-        this.load.audio("foliage", "Retro Impact Lofi 09.wav");
-        this.load.audio("swoosh", "Retro Swooosh 07.wav");
-        this.load.audio("swoosh2", "Retro Swooosh 16.wav");
+        this.load.audio("impact", "Retro_Impact_Punch 07.wav");
+        this.load.audio("foliage", "Retro_Impact_Lofi 09.wav");
+        this.load.audio("swoosh", "Retro_Swooosh_07.wav");
+        this.load.audio("swoosh2", "Retro_Swooosh_16.wav");
 
         // Load tilemap information
         this.load.image("bright_tiles", "gentle forest v01.png");                         // Packed tilemap
