@@ -20,8 +20,9 @@ class Level1 extends Phaser.Scene {
         this.counter = 0;
         this.display_counter = 0;
 
-        // score prep
+        // game-wide variables
         level_score = 5000;
+        next_level = "level2";
         
     }
 
@@ -159,7 +160,6 @@ class Level1 extends Phaser.Scene {
         if (this.dashed) {
             this.counter += 1;
             if (this.counter >= 10) {
-                console.log("reset");
                 this.counter = 0;
                 this.dashed = false;
                 my.sprite.player.body.setVelocityX(0);
@@ -240,9 +240,8 @@ class Level1 extends Phaser.Scene {
 
         // win condition
         if (my.sprite.player.y < 0) {
-            console.log(level_score.toString());
             total_score += level_score;
-            this.scene.start("level2");
+            this.scene.start("levelEnd");
         }
         
     }

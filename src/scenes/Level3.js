@@ -154,7 +154,6 @@ class Level3 extends Phaser.Scene {
         if (this.dashed) {
             this.counter += 1;
             if (this.counter >= 10) {
-                console.log("reset");
                 this.counter = 0;
                 this.dashed = false;
                 my.sprite.player.body.setVelocityX(0);
@@ -235,9 +234,8 @@ class Level3 extends Phaser.Scene {
 
         // win condition
         if (my.sprite.player.y < 0) {
-            console.log(level_score.toString());
             total_score += level_score;
-            this.scene.start("level3");
+            this.scene.start("gameEnd");
         }
         
     }

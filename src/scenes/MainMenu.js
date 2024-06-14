@@ -23,7 +23,7 @@ class MainMenu extends Phaser.Scene {
 
     update() {
         if (this.space_key.isDown) {
-            this.scene.start("level2");
+            this.scene.start("level1");
         }
     }
 }

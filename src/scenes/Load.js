@@ -12,20 +12,35 @@ class Load extends Phaser.Scene {
         this.load.image("directions_2", "directions_2.png");
         this.load.image("directions_3", "directions_3.png");
         this.load.image("background", "mainmenubackground.png");
+        
+        // Load Level End Menu
+        this.load.image("end_text", "level_end.png");
+        this.load.image("press_space_end", "press_space_end.png");
+
+        // Load Credits
+        this.load.image("space_back", "space_back.png");
+        this.load.image("credits", "credits.png");
+
+        // Load Game End Menu
+        this.load.image("game_end_text", "game_end.png");
+        this.load.image("game_end_options", "game_end_options.png ")
 
         // Load Level 1 Directions
         this.load.image("bush_directions_1", "bush_directions_1.png");
 
+        // Load Level 2 Directions
+        this.load.image("puddle_directions_1", "puddle_directions_1.png");
+
         // Load slug spritesheet
         
         this.load.atlas("slug", "Slug.png", "Slug_atlas.json");
+
+        // Load sfx
         this.load.audio("main_music", "SlugSong.mp3");
         this.load.audio("impact", "Retro Impact Punch 07.wav");
         this.load.audio("foliage", "Retro Impact Lofi 09.wav");
         this.load.audio("swoosh", "Retro Swooosh 07.wav");
         this.load.audio("swoosh2", "Retro Swooosh 16.wav");
-
-        console.log("looking good...");
 
         // Load tilemap information
         this.load.image("bright_tiles", "gentle forest v01.png");                         // Packed tilemap
@@ -54,10 +69,17 @@ class Load extends Phaser.Scene {
         });
 
         // make music loop
-        this.music = this.sound.add("main_music");
-        this.music.setLoop(true);
-        this.music.volume = .4;
-        this.music.play();
+        if (music != null) {
+            music.stop();
+        }
+        music = this.sound.add("main_music");
+        music.setLoop(true);
+        music.volume = .4;
+        music.play();
+
+        // reset scores
+        level_score = 0;
+        total_score = 0;
 
         // start game
         this.scene.start("mainMenu");

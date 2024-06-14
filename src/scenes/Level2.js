@@ -22,6 +22,7 @@ class Level2 extends Phaser.Scene {
 
         // score prep
         level_score = 5000;
+        next_level = "level3";
         
     }
 
@@ -131,13 +132,19 @@ class Level2 extends Phaser.Scene {
         my.sprite.player.setCollideWorldBounds(true);
         this.physics.world.setBounds(0, 0, game.config.width, this.map.heightInPixels, true, true, false, true);
 
+        // puddle directions
+        this.puddle_directions_1 = this.add.image(game.config.width*(1/2), this.cameras.main.worldView.y + 100, "puddle_directions_1");
+        this.puddle_directions_1.setScale(.6);
+
     }
 
     update() {
         // update instruction location, delete after a certain amount of time
         if (this.display_counter <= 300) {
             this.display_counter++;
+            this.puddle_directions_1.y = this.cameras.main.worldView.y + 100;
         } else {
+            this.puddle_directions_1.visible = false;
         }
 
         // update score
@@ -154,7 +161,6 @@ class Level2 extends Phaser.Scene {
         if (this.dashed) {
             this.counter += 1;
             if (this.counter >= 10) {
-                console.log("reset");
                 this.counter = 0;
                 this.dashed = false;
                 my.sprite.player.body.setVelocityX(0);
@@ -235,9 +241,8 @@ class Level2 extends Phaser.Scene {
 
         // win condition
         if (my.sprite.player.y < 0) {
-            console.log(level_score.toString());
             total_score += level_score;
-            this.scene.start("level3");
+            this.scene.start("levelEnd");
         }
         
     }
