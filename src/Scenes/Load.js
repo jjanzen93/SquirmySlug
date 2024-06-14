@@ -37,8 +37,8 @@ class Load extends Phaser.Scene {
 
         // Load sfx
         this.load.audio("main_music", "SlugSong.mp3");
-        this.load.audio("impact", "Retro_Impact_Punch.wav");
-        this.load.audio("foliage", "Retro_Impact_LoFi.wav");
+        this.load.audio("impact", "collision.wav");
+        this.load.audio("foliage", "foliage.wav");
         this.load.audio("swoosh", "Retro_Swooosh1.wav");
         this.load.audio("swoosh2", "Retro_Swooosh2.wav");
 
