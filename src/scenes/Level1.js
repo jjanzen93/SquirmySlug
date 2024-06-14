@@ -1,6 +1,6 @@
-class Level2 extends Phaser.Scene {
+class Level1 extends Phaser.Scene {
     constructor() {
-        super("level2");
+        super("level1");
     }
 
     init() {
@@ -28,7 +28,7 @@ class Level2 extends Phaser.Scene {
     create() {
 
         // creating new map with ground layer
-        this.map = this.add.tilemap("level2", 32, 32, 30, 250);
+        this.map = this.add.tilemap("level1", 32, 32, 30, 250);
 
         this.tileset = this.map.addTilesetImage("gentle forest v01", "bright_tiles");
 
@@ -131,13 +131,18 @@ class Level2 extends Phaser.Scene {
         my.sprite.player.setCollideWorldBounds(true);
         this.physics.world.setBounds(0, 0, game.config.width, this.map.heightInPixels, true, true, false, true);
 
+        // instruction pop-up
+        this.bush_directions_1 = this.add.image(game.config.width*(1/2), this.cameras.main.worldView.y + 100, "bush_directions_1");
+        this.bush_directions_1.setScale(.7);
     }
 
     update() {
         // update instruction location, delete after a certain amount of time
         if (this.display_counter <= 300) {
             this.display_counter++;
+            this.bush_directions_1.y = this.cameras.main.worldView.y + 100;
         } else {
+            this.bush_directions_1.visible = false;
         }
 
         // update score
@@ -160,11 +165,11 @@ class Level2 extends Phaser.Scene {
                 my.sprite.player.body.setVelocityX(0);
                 my.sprite.player.body.setMaxVelocity(this.max_velocity);
             }
-            else if (cursors.left.isDown) {
+            else if (my.sprite.player.body.velocity.x < 0) {
                 my.sprite.player.body.setVelocityX(-500);
                 my.sprite.player.body.setMaxVelocity(10000);
 
-            } else if (cursors.right.isDown) {
+            } else if (my.sprite.player.body.velocity.x > 0) {
                 my.sprite.player.body.setVelocityX(500);
                 my.sprite.player.body.setMaxVelocity(10000);
             }
@@ -237,7 +242,7 @@ class Level2 extends Phaser.Scene {
         if (my.sprite.player.y < 0) {
             console.log(level_score.toString());
             total_score += level_score;
-            this.scene.start("level3");
+            this.scene.start("level2");
         }
         
     }

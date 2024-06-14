@@ -1,6 +1,6 @@
-class Level2 extends Phaser.Scene {
+class Level3 extends Phaser.Scene {
     constructor() {
-        super("level2");
+        super("level3");
     }
 
     init() {
@@ -28,7 +28,7 @@ class Level2 extends Phaser.Scene {
     create() {
 
         // creating new map with ground layer
-        this.map = this.add.tilemap("level2", 32, 32, 30, 250);
+        this.map = this.add.tilemap("level3", 32, 32, 30, 250);
 
         this.tileset = this.map.addTilesetImage("gentle forest v01", "bright_tiles");
 

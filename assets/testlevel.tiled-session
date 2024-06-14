@@ -10,6 +10,10 @@
         "": {
             "scaleInDock": 1
         },
+        "#gentle forest v01": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
         "gentle forest v01.tmx": {
             "scale": 0.4347569444444444,
             "selectedLayer": 0,
@@ -19,6 +23,42 @@
             }
         },
         "gentle forest v01.tmx#gentle forest v01": {
+            "scaleInDock": 1
+        },
+        "level1.tmj": {
+            "expandedObjectLayers": [
+                4
+            ],
+            "scale": 0.75,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 218.66666666666663,
+                "y": 441.99999999999994
+            }
+        },
+        "level1.tmj#gentle forest v01": {
+            "scaleInDock": 1
+        },
+        "level2.tmj": {
+            "scale": 0.75,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 166.66666666666663,
+                "y": 2122
+            }
+        },
+        "level2.tmj#gentle forest v01": {
+            "scaleInDock": 1
+        },
+        "level3.tmx": {
+            "scale": 0.75,
+            "selectedLayer": 4,
+            "viewCenter": {
+                "x": 353.33333333333337,
+                "y": 1846
+            }
+        },
+        "level3.tmx#gentle forest v01": {
             "scaleInDock": 1
         },
         "testlevel.tmx": {
@@ -34,7 +74,7 @@
         }
     },
     "last.imagePath": "C:/Users/jackj/OneDrive/Documents/CMPM120/SquirmySlug/assets",
-    "map.height": 500,
+    "map.height": 150,
     "map.lastUsedFormat": "json",
     "map.tileHeight": 16,
     "map.tileWidth": 16,

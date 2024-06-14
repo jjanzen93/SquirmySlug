@@ -18,7 +18,7 @@ let config = {
     physics: {
         default: 'arcade',
         arcade: {
-            debug: true,
+            debug: false,
             gravity: {
                 x: 0,
                 y: 0
@@ -26,12 +26,14 @@ let config = {
         }
     },
     width: 480,
-    height: 720,
-    scene: [Load, TestLevel, Level2]
+    height: 600,
+    scene: [Load, MainMenu, TestLevel, Level1, Level3, Level2]
 }
 
 var cursors;
 const SCALE = 2.0;
-var my = {sprite: {}, text: {}};
+var my = {sprite: {}, text: {}, vfx: {}};
+var total_score = 0;
+var level_score = 0;
 
 const game = new Phaser.Game(config);
