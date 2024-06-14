@@ -136,6 +136,8 @@ class Level2 extends Phaser.Scene {
         this.puddle_directions_1 = this.add.image(game.config.width*(1/2), this.cameras.main.worldView.y + 100, "puddle_directions_1");
         this.puddle_directions_1.setScale(.6);
 
+        my.sprite.player.body.setAccelerationY(-50);
+
     }
 
     update() {

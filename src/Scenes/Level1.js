@@ -135,6 +135,8 @@ class Level1 extends Phaser.Scene {
         // instruction pop-up
         this.bush_directions_1 = this.add.image(game.config.width*(1/2), this.cameras.main.worldView.y + 100, "bush_directions_1");
         this.bush_directions_1.setScale(.7);
+
+        my.sprite.player.body.setAccelerationY(-50);
     }
 
     update() {

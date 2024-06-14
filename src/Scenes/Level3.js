@@ -131,6 +131,7 @@ class Level3 extends Phaser.Scene {
         my.sprite.player.setCollideWorldBounds(true);
         this.physics.world.setBounds(0, 0, game.config.width, this.map.heightInPixels, true, true, false, true);
 
+        my.sprite.player.body.setAccelerationY(-50);
     }
 
     update() {
